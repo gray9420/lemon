@@ -56,20 +56,20 @@ public class TaskRegistrarAutoConfig implements EnvironmentAware, SchedulingConf
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-        Set<String> taskGroups = taskGroupMap.keySet();
-        for (String groupKey : taskGroups) {
-            Map<String, Object> taskGroup = taskGroupMap.get(groupKey);
-            String groupName = taskGroup.get("groupName").toString();
-            String groupId = taskGroup.get("groupId").toString();
-            String cookie = taskGroup.get("cookie").toString();
-            String openAiKey = taskGroup.get("openAiKey").toString();
-            String cronExpressionBase64 = taskGroup.get("cronExpression").toString();
-            String cronExpression = new String(Base64.getDecoder().decode(cronExpressionBase64), StandardCharsets.UTF_8);
-            boolean silenced = Boolean.parseBoolean(taskGroup.get("silenced").toString());
-            logger.info("创建任务 groupName：{} groupId：{} cronExpression：{}", groupName, groupId, cronExpression);
-            // 添加任务
-            taskRegistrar.addCronTask(new ChatbotTask(groupName, groupId, cookie, openAiKey, zsxqApi, openAI, silenced), cronExpression);
-        }
+//        Set<String> taskGroups = taskGroupMap.keySet();
+//        for (String groupKey : taskGroups) {
+//            Map<String, Object> taskGroup = taskGroupMap.get(groupKey);
+//            String groupName = taskGroup.get("groupName").toString();
+//            String groupId = taskGroup.get("groupId").toString();
+//            String cookie = taskGroup.get("cookie").toString();
+//            String openAiKey = taskGroup.get("openAiKey").toString();
+//            String cronExpressionBase64 = taskGroup.get("cronExpression").toString();
+//            String cronExpression = new String(Base64.getDecoder().decode(cronExpressionBase64), StandardCharsets.UTF_8);
+//            boolean silenced = Boolean.parseBoolean(taskGroup.get("silenced").toString());
+//            logger.info("创建任务 groupName：{} groupId：{} cronExpression：{}", groupName, groupId, cronExpression);
+//            // 添加任务
+//            taskRegistrar.addCronTask(new ChatbotTask(groupName, groupId, cookie, openAiKey, zsxqApi, openAI, silenced), cronExpression);
+//        }
     }
 
 }
