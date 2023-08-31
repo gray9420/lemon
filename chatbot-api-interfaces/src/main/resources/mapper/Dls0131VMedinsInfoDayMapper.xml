@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.Dls0131VMedinsInfoDayMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Dls0131VMedinsInfoDay">
+            <result property="estaDate" column="ESTA_DATE" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="UPDATE_TIME" jdbcType="TIMESTAMP"/>
+            <result property="startTime" column="START_TIME" jdbcType="TIMESTAMP"/>
+            <result property="endTime" column="END_TIME" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ESTA_DATE,CREATE_TIME,UPDATE_TIME,
+        START_TIME,END_TIME,ORG_ID,
+        USCC,MGT_ADMDVS_CODE,SET_EMP_CODE,
+        ORG_LICENSE,AFIL_RLTS_CODE,NATY_FLAG,
+        DIVIDE_ORG_FLAG,FINAL_ORG_FLAG,PRNT_ORG_ID,
+        PRNT_ORG_CODE,PRNT_ORG_NAME,ORG_CODE,
+        ORG_SCD_NAME_FLAG,ORG_SCD_NAME,ADDR_PROV,
+        ADDR_CITY,ADDR_COTY,ADDR_SUBDAGCY,
+        ADDR_VILCM,ADDR_HOUSE_NO,LNT,
+        LAT,ORG_NAME,POSCODE,
+        TEL,EMAIL,WEBSITE,
+        LEGENT,SET_PTCE_FLAG,ER_ORG_FLAG,
+        BUILD_AREA,LEGENT_TEL,ORG_STAS,
+        LEGENT_TYPE,STRAIGHT_SUPERIORS,EXACT_LV,
+        LASTTIME,CANC_REA,ORG_LV_REG_TYPE,
+        ORG_TYPE,ORG_TYPE_MGT_CODE,ADMDVS_CODE
+    </sql>
+</mapper>

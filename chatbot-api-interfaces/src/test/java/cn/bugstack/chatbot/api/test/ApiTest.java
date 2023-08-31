@@ -1,5 +1,6 @@
 package cn.bugstack.chatbot.api.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -14,6 +15,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.Date;
+
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
  * @author 小傅哥，微信：fustack
@@ -21,7 +25,29 @@ import java.util.Base64;
  * @github https://github.com/fuzhengwei
  * @Copyright 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
  */
+@Slf4j
 public class ApiTest {
+
+    @Test
+    public void snow(){
+        long snowflakeId = 1475754982694199298L;
+
+//        // MyBatis-Plus 默认的纪元时间为 2016-05-20 00:00:00.000
+//        long twepoch = 1463678400000L; // 时间戳单位为毫秒
+        // 假设纪元时间为Thu Nov 04 00:28:53 GMT 2010
+        long twepoch = 1288834974657L;
+
+
+        long timestampMillis = (snowflakeId >> 22) + twepoch; // 提取时间戳并加上纪元时间
+        log.info(String.valueOf(timestampMillis));
+        Date date = new Date(timestampMillis); // 转换为Date对象
+        System.out.println(date);
+    }
+
+    @Test
+    public void temp(){
+        System.out.println(System.getProperty("user.dir"));
+    }
 
     @Test
     public void base64(){
